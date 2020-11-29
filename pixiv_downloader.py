@@ -12,7 +12,7 @@ except Exception as e:
 
 gui=tkinter.Tk()
 gui.title("Pixiv downloader")
-gui.geometry("590x150")
+gui.geometry("590x103")
 gui.resizable(False, False)
 
 def download():
@@ -67,9 +67,9 @@ def openfolder():
 txt=tkinter.Label(gui, text="다운로드 버튼을 눌러주세요!")
 
 url=tkinter.Entry(gui, width=100)
-urtext=tkinter.Label(gui, text="url or id")
+url.insert(0, "url이나 아이디를 입력해주세요!")
 name=tkinter.Entry(gui, width=100)
-natext=tkinter.Label(gui, text="name")
+name.insert(0, "파일 이름을 입력해주세요!")
 
 btn1=tkinter.Button(gui, text="다운로드", padx=5, pady=5, command=download)
 btn2=tkinter.Button(gui, text="글자삭제", padx=11, pady=5, command=cleaner)
@@ -78,8 +78,8 @@ p_num=tkinter.DoubleVar()
 progressbar=ttk.Progressbar(gui, maximum=100, length=350, variable=p_num)
 
 txt.pack(side="bottom")
-urtext.pack(), url.pack(pady=1)
-natext.pack(), name.pack(pady=1)
+url.pack(pady=1)
+name.pack(pady=1)
 progressbar.pack(side="left"), btn1.pack(side="right"), btn2.pack(side="right"), btn3.pack(side="right")
 
 gui.mainloop()
