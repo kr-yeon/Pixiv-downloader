@@ -38,11 +38,10 @@ def download():
         except Exception as e:
             txt.config(text="파일명이 이미 있습니다.")
             return
-        urls.reverse()
         try:
-            urls=urls[0].split("?")[0]
+            urls=urls[-1].split("?")[0]
         except Exception as e:
-            urls=urls[0]
+            urls=urls[-1]
         urls=json.loads(requests.get("https://apis.hunhee.tk/api1/pixiv/illust.json?id="+urls+"&beautify=true", verify=False).text)["illust"]["image_urls"]
         for i in urls:
             photo=open("pixiv_downloads\\"+name.get()+"\\"+name.get()+"_"+str(num)+".jpg", "wb")
