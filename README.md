@@ -1,5 +1,7 @@
 # Pixiv-downloader
 
+--api error로 인해 사용 불가능.--
+
 그냥 픽시브 다운로더입니다.
 
 첫번째 적는 란에는 픽시브url 이나 id를,
